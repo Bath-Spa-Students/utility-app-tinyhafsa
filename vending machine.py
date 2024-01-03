@@ -152,15 +152,15 @@ def vending_machine ():
     #function to print receipt
     def print_receipt(user_cart):
         print ("\n\t\t\033[1;30m ＲＥＣＥＩＰＴ \033[0m  ") #title is displayed
-        print ("\t\t.-----------------------------.")
+        print ("\t\t.------------------------------.")
         #for loop - goes through the items in the user cart (purchases)
         for item in user_cart:
             #item name and price is printed 
-            print (f"\t\t| {item['name']:<19}  ${item['price']:<6}|")
-        print ("\t\t|                      ------ |")
+            print (f"\t\t| {item['name']:<19}  ${item['price']:<6} |")
+        print ("\t\t|                      ------  |")
         #total money spent is printed
-        print (f"\t\t|               TOTAL: ${sum(item['price'] for item in user_cart):.2f}  |")
-        print ("\t\t'-----------------------------'")
+        print (f"\t\t                TOTAL: ${sum(item['price'] for item in user_cart):.2f}  ")
+        print ("\t\t'------------------------------'")
         #message displayed at the end of the program
         print("\n\t\033[1;30mTransaction complete. Enjoy your purchase.\033[0m\n")
 
