@@ -10,21 +10,30 @@ def vending_machine ():
     #storing menu information in a three-level nested dictionary
     menu = {
         #storing items in beverage category
+        #outermost level - category name (drinks) is key and all items are values
         "drinks": {
-            "a": {"name": "Fanta"          , "price": 2.50 , "code": "1"  , "stock": 2},
+            #second level - item (a, b, c, d) are keys and details of that item are values
+            #innermost level - headings (name, price, code, stock) are keys, and details (Fanta, 2.50, 1, 2) are the values 
+            "a": {"name": "Fanta"          , "price": 2.50 , "code": "1"  , "stock": 2}, 
             "b": {"name": "Cold Water"     , "price": 1.00 , "code": "2"  , "stock": 4},
             "c": {"name": "Guava Juice"    , "price": 2.00 , "code": "3"  , "stock": 3},
             "d": {"name": "Chocolate Milk" , "price": 3.00 , "code": "4"  , "stock": 3}
     },
         #storing items in snack category
+        #outermost level - category name (snacks) is key and all items are values
         "snacks": {
+            #second level - item (e, f, g, h) are keys and details of that item are values   
+            #innermost level - headings (name, price, code, stock) are keys, and details (Lays Chips, 2.25, 5, 4) are the values         
             "e": {"name": "Lays Chips"     , "price": 2.25 , "code": "5"  , "stock": 4},
             "f": {"name": "Chunko Cookies" , "price": 2.00 , "code": "6"  , "stock": 3},
             "g": {"name": "Caramal Popcorn", "price": 3.50 , "code": "7"  , "stock": 3},
             "h": {"name": "Loackers Wafers", "price": 3.00 , "code": "8"  , "stock": 3}
     },
         #storing items in sweet category
+        #outermost level - category name (sweets) is key and all items are values
         "sweets": {
+            #second level - item (i, j, k, l) are keys and details of that item are values   
+            #innermost level - headings (name, price, code, stock) are keys, and details (M&Ms, 3.50, 9, 6) are the values  
             "i": {"name": "M&Ms"           , "price": 3.50 , "code": "9"  , "stock": 6},
             "j": {"name": "Bounty"         , "price": 3.00 , "code": "10" , "stock": 4},
             "k": {"name": "Hersheys"       , "price": 3.50 , "code": "11" , "stock": 4},
@@ -102,11 +111,11 @@ def vending_machine ():
                             details["stock"] -= 1 # STOCK MANAGEMENT - one subtracted from stock
 
                             #SUGGESTIONS
-                            if purchase in ["drinks"]: # if user purchases a drink
+                            if purchase in ["1", "2", "3", "4"]: # if user purchases a drink
                                 #suggested snacks are printed
                                 print ("\t\033[1;30mWe suggest a snack with your drink.\033[0m")
                                 print ("\tWe offer: Lays Chips, Chunko Cookies, Caramel Popcorn and Loackers Wafers.")
-                            elif purchase in ["snacks"]: # if user purchases a snack
+                            elif purchase in ["5", "6", "7", "8"]: # if user purchases a snack
                                 #suggested sweets are printed 
                                 print ("\t\033[1;30mWe suggest a sweet with your snack.\033[0m")
                                 print ("\tWe offer: M&Ms, Bounty, Hersheys and Cake Roll.")
